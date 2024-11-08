@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suivi des Livraisons</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Suivi des Livraisons de la Journée</h1>
+        <div id="commande-form">
+            <h2>Ajouter une Livraison</h2>
+            <label>Nom du Client: <input type="text" id="nom-client"></label>
+            <label>Numéro de Téléphone: <input type="tel" id="tel-client"></label>
+            <button onclick="ajouterCommande()">Ajouter</button>
+        </div>
+
+        <h2>Commandes du Jour</h2>
+        <table id="table-commandes">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Téléphone</th>
+                    <th>Paiement Nourriture</th>
+                    <th>Paiement Livraison</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="liste-commandes">
+                <!-- Commandes ajoutées ici dynamiquement -->
+            </tbody>
+        </table>
+
+        <h2>Bilan Journalier</h2>
+        <div id="bilan">
+            <p>Nombre de Livraisons: <span id="nb-livraisons">0</span></p>
+            <p>Total Nourriture: <span id="total-nourriture">0</span> FCFA</p>
+            <p>Total Livraison: <span id="total-livraison">0</span> FCFA</p>
+        </div>
+
+        <!-- Modal pour les modes de paiement -->
+        <div id="payment-modal" class="modal">
+            <div class="modal-content">
+                <h3>Sélectionnez le Mode de Paiement</h3>
+                <label>Paiement Nourriture:
+                    <select id="modal-paiement-nourriture">
+                        <option value="Izoua">Chez Izoua</option>
+                        <option value="ChezMoi">Chez moi</option>
+                    </select>
+                </label>
+                <label>Paiement Livraison:
+                    <select id="modal-paiement-livraison">
+                        <option value="Izoua">Chez Izoua</option>
+                        <option value="ChezMoi">Chez moi</option>
+                    </select>
+                </label>
+                <button onclick="confirmerPaiement()">Confirmer</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
